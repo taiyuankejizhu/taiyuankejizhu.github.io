@@ -149,7 +149,8 @@ $(document).ready(function() {
         }
     }    
     
-    peer  = new Peer(u_id+'_cam',{host: 'www.bunver.com', port: 9000, path: '/peerjs', secure:true});	  
+    //peer  = new Peer(u_id+'_cam',{host: 'www.bunver.com', port: 9000, path: '/peerjs', secure:true});
+	peer = new Peer(u_id+'_cam', {debug: 2});
 	
     // peer id assignment
     peer.on('open', function(id) {
