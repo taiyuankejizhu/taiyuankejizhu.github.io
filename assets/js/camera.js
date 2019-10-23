@@ -73,7 +73,7 @@ $(document).ready(function() {
 
     function setWebcamAndMic(audio_source, video_source) {
         trace("Requesting local stream");
-        navigator.mediaDevices.getUserMedia({ audio: {optional: [{sourceId: audio_source}]},
+        getUserMedia({ audio: {optional: [{sourceId: audio_source}]},
             video: {optional: [{sourceId: video_source}]}
             }, gotStream, function() {});
     }
