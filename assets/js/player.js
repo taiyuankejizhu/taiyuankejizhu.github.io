@@ -16,7 +16,9 @@ $(document).ready(function() {
         if (typeof MediaStreamTrack === 'undefined'){
             alert('This browser does not support MediaStreamTrack.');
         } else {
-            MediaStreamTrack.getSources(gotSources);
+            if (navigator.mediaDevices) {
+                navigator.mediaDevices.enumerateDevices().then(gotSources);
+            }
         }            
     }
                 
