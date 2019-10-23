@@ -19,7 +19,7 @@ $(document).ready(function() {
             if (navigator.mediaDevices) {
                 navigator.mediaDevices.enumerateDevices().then(gotSources);
             }
-        }            
+        }
     }
                 
     function selectCam() {
@@ -73,7 +73,7 @@ $(document).ready(function() {
 
     function setWebcamAndMic(audio_source, video_source) {
         trace("Requesting local stream");
-        getUserMedia({ audio: {optional: [{sourceId: audio_source}]},
+        await navigator.mediaDevices.getUserMedia({ audio: {optional: [{sourceId: audio_source}]},
             video: {optional: [{sourceId: video_source}]}
             }, gotStream, function() {});
     }
