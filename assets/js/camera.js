@@ -91,11 +91,16 @@ $(document).ready(function() {
         trace("Received local stream");		
         localstream = stream;
 
+        const videoTracks = stream.getVideoTracks();
+        console.log(`Using video device: ${videoTracks[0].label}`);
+        vidmain.srcObject = stream;
+/*
         try {
             vidmain.srcObject = stream;
         } catch (error) {
             vidmain.src = window.URL.createObjectURL(stream);
         }
+*/
         //attachMediaStream(vid_main, localstream);	        
     }
 
