@@ -81,7 +81,13 @@ $(document).ready(function() {
     function gotStream(stream) {
         trace("Received local stream");		
         localstream = stream;
-        attachMediaStream(vid_main, localstream);	        
+
+        try {
+            vidmain.srcObject = stream;
+        } catch (error) {
+            vidmain.src = window.URL.createObjectURL(stream);
+        }
+        //attachMediaStream(vid_main, localstream);	        
     }
 
     function caller() {
