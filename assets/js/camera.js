@@ -91,14 +91,11 @@ $(document).ready(function() {
         trace("Received local stream");		
         localstream = stream;
 
-        vidmain.srcObject = stream;
-/*
         try {
             vidmain.srcObject = stream;
         } catch (error) {
             vidmain.src = window.URL.createObjectURL(stream);
         }
-*/
         //attachMediaStream(vid_main, localstream);	        
     }
 
