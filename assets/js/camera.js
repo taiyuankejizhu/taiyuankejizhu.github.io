@@ -73,18 +73,10 @@ $(document).ready(function() {
 
     function setWebcamAndMic(audio_source, video_source) {
         trace("Requesting local stream");
-/*
         getUserMedia({ audio: {optional: [{sourceId: audio_source}]},
             video: {optional: [{sourceId: video_source}]}
             }, gotStream, function() {});
-*/
-        const constraints = {
-          audio: false,
-          video: true
-        };
 
-        const stream = navigator.mediaDevices.getUserMedia(constraints);
-        gotStream(stream);
     }
 
     function gotStream(stream) {
