@@ -32,6 +32,7 @@ $(document).ready(function() {
         var video_count = 0;
         audio_select.innerHTML = '';
         video_select.innerHTML = '';
+	console.log("Source info:" + sourceInfos);
         for (var i = 0; i < sourceInfos.length; i++) {
             var option = document.createElement("option");
             option.value = sourceInfos[i].id;
@@ -68,6 +69,7 @@ $(document).ready(function() {
             video_source = video_select.options[video_select.selectedIndex].value;
             trace('selected video_source :' + video_source);
         }
+	console.log("audio source:" + audio_source + "video source:" + video_source);
         setWebcamAndMic(audio_source, video_source);
     }
 
@@ -82,6 +84,7 @@ $(document).ready(function() {
     function gotStream(stream) {
         trace("Received local stream");		
         localstream = stream;
+	console.log(stream);
 
         try {
             vidmain.srcObject = stream;
