@@ -37,7 +37,9 @@ $(document).ready(function() {
             var option = document.createElement("option");
             option.value = sourceInfos[i].id;
             option.text = sourceInfos[i].label;
-	    console.log("Source:" + sourceInfos[i]);
+	    console.log("id:" + option.value);
+	    console.log("label:" + option.text);
+	    console.log("kind:" + sourceInfos[i].kind);
             if (sourceInfos[i].kind === 'audio') {
                 audio_count++;
                 if (option.text === '') {
